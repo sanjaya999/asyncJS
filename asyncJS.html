@@ -7,15 +7,28 @@
 </head>
 <body>
     <h1>async</h1>
+    <button id="start">start</button>
     <button id="stop">stop</button>
-    <script>
-       const appr =  setTimeout( ()=>{
-            alert("appeard after 2sec");
-        },2000)
 
+
+
+
+    <script>
+        let star;
+       
+        
+          document.querySelector('#start').addEventListener('click', ()=>{
+           star = setInterval(()=>{
+            console.log("started");
+        },1000)
+        })
+
+
+
+       
         document.querySelector('#stop').addEventListener('click', ()=>{
-            clearTimeout(appr)
-            alert("stopped")
+            clearInterval(star);
+            
         })
     </script>
 </body>
